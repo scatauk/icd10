@@ -1,0 +1,24 @@
+{{ define "main" }}
+<a href="{{ .Parent.RelPermalink }}">Back</a>  
+<h1>{{ .Params.ICD10 }}</h1>
+  <h3>{{ .Params.Description }}</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Matters for Anaesthesia</th>
+        <th>Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          {{ if eq .Params.Matters true }}
+          <td class="danger">Yes</td>
+          {{ else }}
+          <td class="success">No</td>
+          {{ end }}
+          <td>{{ .Params.Weight }}</td>
+        </tr>
+    </tbody>
+  </table>
+  {{ .Content }}
+{{ end }}

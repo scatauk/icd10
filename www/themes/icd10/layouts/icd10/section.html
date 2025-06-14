@@ -1,0 +1,54 @@
+{{ define "main" }}
+  {{ if eq .Section "icd10" }}
+    {{ if .IsSection }}
+      {{ if eq .CurrentSection.RelPermalink "/icd10/" }}
+            <h3><a href="/">Back to Project Overview</a></h3>
+  
+      <h1>ICD10 Index</h1>
+      <h2>
+          {{ range .Sections }}
+            <a href="{{ .RelPermalink }}">{{ if .Title }}{{ .Title }}{{ else }}{{ .File.Path | replaceRE `^.*/([A-Z])/.*$` "$1" | default (path.Base .File.Dir) }}{{ end }}</a></li>
+          {{ end }}
+      </h2>
+      {{ else }}
+        <h3><a href="/icd10/">Back to Index</a></h3>
+        <h2>
+            {{ range .Parent.Sections }}
+            {{ if eq .RelPermalink $.CurrentSection.RelPermalink }}
+                    <span class="current">{{ if .Title }}{{ .Title }}{{ else }}{{ .File.Path | replaceRE `^.*/([A-Z])/.*$` "$1" | default (path.Base .File.Dir) }}{{ end }}</span>
+                  {{ else }}
+                    <a href="{{ .RelPermalink }}">{{ if .Title }}{{ .Title }}{{ else }}{{ .File.Path | replaceRE `^.*/([A-Z])/.*$` "$1" | default (path.Base .File.Dir) }}{{ end }}</a>
+                  {{ end }}
+          {{ end }}
+      </h2>
+        <h1>Codes</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>ICD10</th>
+              <th>Description</th>
+              <th>Matters</th>
+              <th>Weight</th>
+              <th>Link</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ range .Pages.ByTitle }}
+              <tr>
+                <td>{{ .Params.ICD10 }}</td>
+                <td>{{ .Params.Description }}</td>
+                {{ if eq .Params.Matters true }}
+          <td class="danger">Yes</td>
+          {{ else }}
+          <td class="success">No</td>
+          {{ end }}
+                <td>{{ .Params.Weight }}</td>
+                <td><a href="{{ .RelPermalink }}">View</a></td>
+              </tr>
+            {{ end }}
+          </tbody>
+        </table>
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }} 
