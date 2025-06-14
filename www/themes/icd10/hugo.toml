@@ -1,6 +1,6 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://icd10.scata.org.uk/'
 languageCode = 'en-US'
-title = 'My New Hugo Site'
+title = 'ICD10/Anaesthesia'
 
 [menus]
   [[menus.main]]
