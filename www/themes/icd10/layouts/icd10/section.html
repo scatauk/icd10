@@ -7,7 +7,7 @@
       <h1>ICD10 Index</h1>
       <h2>
           {{ range .Sections }}
-            <a href="{{ .RelPermalink }}">{{ if .Title }}{{ .Title }}{{ else }}{{ .File.Path | replaceRE `^.*/([A-Z])/.*$` "$1" | default (path.Base .File.Dir) }}{{ end }}</a></li>
+            <a href="{{ .RelPermalink }}">{{ if .Title }}{{ .Title }}{{ else }}{{ .File.Path | replaceRE `^.*/([A-Z])/.*$` "$1" | default (path.Base .File.Dir) }}{{ end }}</a>
           {{ end }}
       </h2>
       {{ else }}
@@ -22,8 +22,19 @@
           {{ end }}
       </h2>
         <h1>Codes</h1>
-        <table>
-          <thead>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const stickyHeader = document.querySelector('.sticky');
+          if (stickyHeader) {
+            stickyHeader.style.position = 'sticky';
+            stickyHeader.style.top = '0';
+            stickyHeader.style.backgroundColor = 'white';
+            stickyHeader.style.zIndex = '100';
+          }
+        });
+        </script>
+        <table class="striped">
+            <thead class="sticky">
             <tr>
               <th>ICD10</th>
               <th>Description</th>
@@ -31,7 +42,7 @@
               <th>Weight</th>
               <th>Link</th>
             </tr>
-          </thead>
+            </thead>
           <tbody>
             {{ range sort .Pages "Params.ICD10" "asc" }}
               <tr>
