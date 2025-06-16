@@ -1,4 +1,4 @@
-# ICD-10 / Anaesthesia
+### Background
 
 Healthcare Resource Groups ([HRGs](https://digital.nhs.uk/services/secondary-uses-service-sus/payment-by-results-guidance/sus-pbr-reference-manual/hrg-grouping#healthcare-resource-groups)) are the 'currency' of Payment by Results (PbR) for admitted patient care, outpatient procedures and A&E attendances.  _Complications & Comorbidities_ (CC) lists, maintained by NHS England's National Casemix Office, are an integral part HRG design.
 
