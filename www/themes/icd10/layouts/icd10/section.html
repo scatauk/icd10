@@ -2,16 +2,28 @@
   {{ if eq .Section "icd10" }}
     {{ if .IsSection }}
       {{ if eq .CurrentSection.RelPermalink "/icd10/" }}
-            <h3><a href="/">Back to Project Overview</a></h3>
-  
-      <h1>ICD10 Index</h1>
+      <nav class="plain" aria-label="breadcrumb">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li>Index</li>
+        </ul>
+      </nav>
+      <main class="container">
       <h2>
           {{ range .Sections }}
             <a href="{{ .RelPermalink }}">{{ if .Title }}{{ .Title }}{{ else }}{{ .File.Path | replaceRE `^.*/([A-Z])/.*$` "$1" | default (path.Base .File.Dir) }}{{ end }}</a>
           {{ end }}
       </h2>
+    </main>
       {{ else }}
-        <h3><a href="/icd10/">Back to Index</a></h3>
+      <nav class="plain" aria-label="breadcrumb">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/icd10/">Index</a></li>
+          <li>{{ if .Title }}{{ .Title }}{{ else }}{{ .File.Path | replaceRE `^.*/([A-Z])/.*$` "$1" | default (path.Base .File.Dir) }}{{ end }}</li>
+        </ul>
+      </nav>
+      <main class="container">
         <h2>
             {{ range .Parent.Sections }}
             {{ if eq .RelPermalink $.CurrentSection.RelPermalink }}
@@ -21,7 +33,6 @@
                   {{ end }}
           {{ end }}
       </h2>
-        <h1>Codes</h1>
         <script>
         document.addEventListener('DOMContentLoaded', function() {
           const stickyHeader = document.querySelector('.sticky');
@@ -59,6 +70,7 @@
             {{ end }}
           </tbody>
         </table>
+        </main>
       {{ end }}
     {{ end }}
   {{ end }}

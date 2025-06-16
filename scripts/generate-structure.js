@@ -119,7 +119,7 @@ fs.readFile('blank.csv', (err, data) => {
           + "Matters:" + " " + element.matter + "\n"
           + "Weight: " + element.weight + "\n"
           + "---\n"
-          ,
+          + element.comment + "\n",
           (err) => {
         if (err) throw err;
       });
