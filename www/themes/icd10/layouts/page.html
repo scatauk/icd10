@@ -1,4 +1,5 @@
 {{ define "main" }}
+<main class="container">
 <a href="{{ .Parent.RelPermalink }}">Back</a>  
 <h1>{{ .Params.ICD10 }}</h1>
   <h3>{{ .Params.Description }}</h3>
@@ -20,5 +21,10 @@
         </tr>
     </tbody>
   </table>
+  Suggest a reclassification or correction at GitHub:
+  <a href="https://github.com/scatauk/icd10/tree/main/www/content/icd10/{{ .File.Path | replaceRE `^.*/([A-Z])/.*$` "$1" | default (path.Base .File.Dir) }}/{{ .Params.ICD10 }}.md">
+    https://github.com/scatauk/icd10/tree/main/www/content/icd10/{{ .File.Path | replaceRE `^.*/([A-Z])/.*$` "$1" | default (path.Base .File.Dir) }}/{{ .Params.ICD10 }}.md
+  </a>
+</main>
   {{ .Content }}
 {{ end }}

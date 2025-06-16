@@ -33,7 +33,7 @@
             </tr>
           </thead>
           <tbody>
-            {{ range .Pages.ByTitle }}
+            {{ range sort .Pages "Params.ICD10" "asc" }}
               <tr>
                 <td>{{ .Params.ICD10 }}</td>
                 <td>{{ .Params.Description }}</td>
