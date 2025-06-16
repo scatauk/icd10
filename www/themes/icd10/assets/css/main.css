@@ -46,6 +46,15 @@ h2 a {
   color: #fff !important;
 }
 
+button {
+  background-color: #005EB8 !important;
+  color: #fff !important;
+}
+button:hover {
+  background-color: #00519f !important;
+  color: #ddd !important;
+}
+
 nav.plain {
   background-color: #efefef !important;
   /* margin-bottom: 0rem !important; */

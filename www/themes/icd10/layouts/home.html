@@ -1,9 +1,9 @@
 {{ define "main" }}
   <!-- {{ partial "header.html" }} -->
   <main class="container">
-    <h2><a href="/icd10/">{{ .LinkTitle }}</a></h2>
-    {{ .Summary }}
-    Open the <a href="/icd10/">ICD10</a> anaesthesia list
+    
+    {{ .Content }}
+    <a href="/icd10/"><button>Launch &raquo;</button></a>
   </main>
   {{ end }}
 
