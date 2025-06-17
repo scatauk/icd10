@@ -1,6 +1,6 @@
   [build]
     command = "cd www && hugo build --gc --minify"
-    publish = "public"
+    publish = "www/public"
 
   [build.environment]
     HUGO_VERSION = "0.147.7"
