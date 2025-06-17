@@ -1,5 +1,5 @@
   [build]
-    command = "cd www && hugo --gc --minify"
+    command = "cd www && hugo build --gc --minify"
     publish = "www/public"
 
   [build.environment]
