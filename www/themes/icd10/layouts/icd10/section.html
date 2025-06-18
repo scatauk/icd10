@@ -14,6 +14,8 @@
             <a href="{{ .RelPermalink }}">{{ if .Title }}{{ .Title }}{{ else }}{{ .File.Path | replaceRE `^.*/([A-Z])/.*$` "$1" | default (path.Base .File.Dir) }}{{ end }}</a>
           {{ end }}
       </h2>
+      {{ partial "icd10-search.html" . }}
+      <!-- Search -->
     </main>
       {{ else }}
       <nav class="plain" aria-label="breadcrumb">

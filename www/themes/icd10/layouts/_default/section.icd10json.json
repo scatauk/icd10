@@ -1,0 +1,11 @@
+{{- $pages := where .Site.RegularPages "Section" "icd10" -}}
+[
+{{- range $index, $p := $pages -}}
+  {{- if $index }},{{ end }}
+  {
+    "ICD10": {{ $p.Params.ICD10 | jsonify }},
+    "Description": {{ $p.Params.Description | jsonify }},
+    "Permalink": {{ $p.RelPermalink | jsonify }}
+  }
+{{- end -}}
+] 

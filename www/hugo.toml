@@ -2,3 +2,13 @@ baseURL = 'https://icd10.scata.org.uk/'
 languageCode = 'en-us'
 title = 'SCATA / NHS England ICD-10 Project'
 theme = 'icd10'
+
+[outputFormats]
+  [outputFormats.ICD10JSON]
+    mediaType = "application/json"
+    baseName = "icd10-index"
+    isPlainText = true
+    notAlternative = true
+
+[outputs]
+  section = ["HTML", "ICD10JSON"]
