@@ -119,3 +119,8 @@ nav.plain {
   /* margin-bottom: 0rem !important; */
   padding-left: 0.5rem !important;
 }
+
+mark {
+  padding-left: 0px;
+  padding-right: 0px;
+}
