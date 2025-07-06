@@ -1,5 +1,5 @@
   [build]
-    command = "cd www && hugo build --gc --minify"
+    command = "node scripts/generate-icd10-csv.js && cd www && hugo build --gc --minify"
     publish = "www/public"
 
   [build.environment]

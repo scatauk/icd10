@@ -1,6 +1,8 @@
 const fs = require('fs');
 
-const DUMMY_RUN = false;
+console.log("WARNING: Structure has already been generated and is live. You probably don't need to run this script!");
+
+const DUMMY_RUN = true;
 
 fs.readFile('blank.csv', (err, data) => {
   if (err) throw err;
