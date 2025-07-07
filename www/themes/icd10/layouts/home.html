@@ -9,18 +9,6 @@
           Launch &raquo;
         </button>
       </a>
-      <a href="/icd10/download/icd10-anesthesia.csv" style="text-decoration: none;">
-        <button style="display: flex; align-items: center; gap: 8px; padding: 12px 20px; height: 48px; background: #2d7dd2; color: white; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; min-width: 160px;">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="2" width="14" height="16" rx="2" fill="#fff" stroke="#1b4f72" stroke-width="1.5"/><path d="M7 8V14M10 8V14M13 8V14" stroke="#2d7dd2" stroke-width="1.5" stroke-linecap="round"/><rect x="6" y="5" width="8" height="2" rx="1" fill="#2d7dd2"/></svg>
-          Download CSV
-        </button>
-      </a>
-      <a href="/icd10/download/icd10-anesthesia.xls" style="text-decoration: none;">
-        <button style="display: flex; align-items: center; gap: 8px; padding: 12px 20px; height: 48px; background: #43aa8b; color: white; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; min-width: 160px;">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="2" width="14" height="16" rx="2" fill="#fff" stroke="#22543d" stroke-width="1.5"/><path d="M7 8L10 14L13 8" stroke="#43aa8b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="5" width="8" height="2" rx="1" fill="#43aa8b"/></svg>
-          Download XLS
-        </button>
-      </a>
     </div>
     {{ $day := .Site.Lastmod.Format "2" }}
     {{ $suffix := "th" }}
@@ -34,6 +22,21 @@
     <p style="margin-top: 24px; color: #666; font-size: 0.95em;">
       Last updated: {{ $weekday }}, {{ $day }}{{ $suffix }} {{ $month }} {{ $year }} at {{ $time }}
     </p>
+    <p>The whole dataset is available for download in CSV and XLS format:</p>
+    <div style="display: flex; gap: 16px; align-items: center; margin-top: 20px;">
+      <a href="/icd10/download/icd10-anesthesia.csv" style="text-decoration: none;">
+        <button style="display: flex; align-items: center; gap: 8px; padding: 12px 20px; height: 48px; background: #2d7dd2; color: white; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; min-width: 160px;">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="2" width="14" height="16" rx="2" fill="#fff" stroke="#1b4f72" stroke-width="1.5"/><path d="M7 8V14M10 8V14M13 8V14" stroke="#2d7dd2" stroke-width="1.5" stroke-linecap="round"/><rect x="6" y="5" width="8" height="2" rx="1" fill="#2d7dd2"/></svg>
+          Download CSV
+        </button>
+      </a>
+      <a href="/icd10/download/icd10-anesthesia.xls" style="text-decoration: none;">
+        <button style="display: flex; align-items: center; gap: 8px; padding: 12px 20px; height: 48px; background: #43aa8b; color: white; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; min-width: 160px;">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="2" width="14" height="16" rx="2" fill="#fff" stroke="#22543d" stroke-width="1.5"/><path d="M7 8L10 14L13 8" stroke="#43aa8b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="6" y="5" width="8" height="2" rx="1" fill="#43aa8b"/></svg>
+          Download XLS
+        </button>
+      </a>
+    </div>
     {{ .Content }}
   </main>
   {{ end }}

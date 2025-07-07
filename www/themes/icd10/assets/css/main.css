@@ -120,6 +120,21 @@ nav.plain {
   padding-left: 0.5rem !important;
 }
 
+@media (prefers-color-scheme: dark) {
+  nav.plain {
+    background: #23272e !important;
+    color: #f1f1f1 !important;
+    border-color: #444 !important;
+  }
+  nav.plain a {
+    color: #8ecae6 !important;
+  }
+}
+
+a.secondary:hover {
+  text-decoration: none;
+}
+
 mark {
   padding-left: 0px;
   padding-right: 0px;

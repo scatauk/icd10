@@ -2,6 +2,27 @@
   <input type="text" id="icd10-search-input" placeholder="Search ICD-10 codes or descriptions..." autocomplete="off" style="width:100%;padding:0.5em;font-size:1.1em;">
   <ul id="icd10-search-results" style="list-style:none;padding:0;margin:0;position:absolute;z-index:200;background:white;border:1px solid #ccc;max-height:250px;overflow-y:auto;display:none;width:100%;"></ul>
 </div>
+<style>
+@media (prefers-color-scheme: dark) {
+  #icd10-search-results {
+    background: #23272e !important;
+    color: #f1f1f1 !important;
+    border-color: #444 !important;
+  }
+  #icd10-search-results li {
+    color: #f1f1f1 !important;
+  }
+  #icd10-search-results li mark {
+    background: #444 !important;
+    color: #ffe066 !important;
+  }
+  #icd10-search-input {
+    background: #181a1b !important;
+    color: #f1f1f1 !important;
+    border-color: #444 !important;
+  }
+}
+</style>
 <script>
 (function() {
   const input = document.getElementById('icd10-search-input');
