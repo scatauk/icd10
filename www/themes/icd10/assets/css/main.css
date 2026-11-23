@@ -139,3 +139,50 @@ mark {
   padding-left: 0px;
   padding-right: 0px;
 }
+
+/* Boxed expander adapted from the NHS design system. */
+.guide-expander {
+  margin-block-end: 2.5rem;
+  border: 1px solid var(--pico-muted-border-color);
+  border-block-end-width: 3px;
+  background: var(--pico-card-background-color);
+}
+
+.guide-expander > summary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0.875rem 1rem;
+  line-height: inherit;
+  font-weight: 600;
+}
+
+.guide-expander > summary:not([role]),
+.guide-expander[open] > summary:not([role]):not(:focus) {
+  color: var(--pico-primary);
+}
+
+.guide-expander > summary::after {
+  order: -1;
+  flex: none;
+  margin: 0;
+}
+
+.guide-expander > summary:hover span {
+  text-decoration: underline;
+}
+
+.guide-expander > summary:focus-visible:not([role]) {
+  outline: 3px solid #ffeb3b;
+  outline-offset: 0;
+}
+
+.guide-expander-content {
+  padding: 1rem;
+  border-block-start: 1px solid var(--pico-muted-border-color);
+}
+
+.guide-expander-content > :last-child {
+  margin-block-end: 0;
+}

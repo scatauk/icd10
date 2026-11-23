@@ -10,6 +10,7 @@
         </button>
       </a>
     </div>
+    {{ .Content }}
     {{ $day := .Site.Lastmod.Format "2" }}
     {{ $suffix := "th" }}
     {{ if or (eq $day "1") (eq $day "21") (eq $day "31") }}{{ $suffix = "st" }}{{ end }}
@@ -37,7 +38,6 @@
         </button>
       </a>
     </div>
-    {{ .Content }}
   </main>
   {{ end }}
 

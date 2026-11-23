@@ -33,11 +33,10 @@
   {{ .Content }}
   <hr />
   {{ end }}
-  <small>
-  Suggest a reclassification, correction or add additional clarification on GitHub:
-  <a href="https://github.com/scatauk/icd10/tree/main/www/content/icd10/{{ .File.Path | replaceRE `^.*/([A-Z])/.*$` "$1" | default (path.Base .File.Dir) }}/{{ .Params.ICD10 }}.md">
-    https://github.com/scatauk/icd10/tree/main/www/content/icd10/{{ .File.Path | replaceRE `^.*/([A-Z])/.*$` "$1" | default (path.Base .File.Dir) }}/{{ .Params.ICD10 }}.md
-  </a>
-</small>
+  <p>
+    <a href="https://github.com/scatauk/icd10/blob/main/www/content/{{ .File.Path }}">View this condition’s file on GitHub</a>
+    to suggest a reclassification, correction or clarification.
+    <a href="/#propose-a-change-to-a-conditions-weight">Read the guide to proposing a weight change</a>.
+  </p>
 </main>
 {{ end }}
